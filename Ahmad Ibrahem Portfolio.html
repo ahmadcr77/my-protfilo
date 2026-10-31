@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmad Ibrahem | Creative Media & Design Portfolio</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & Playfair Display for Warm Executive aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            cream: {
+              50: '#FDFBF7',
+              100: '#F7F3EB',
+              200: '#EFE8D8',
+              300: '#E2D6BE',
+            },
+            navy: {
+              700: '#1E293B',
+              800: '#131C2E',
+              900: '#0B132B',
+            },
+            gold: {
+              500: '#B4833E',
+              600: '#96692B',
+              100: '#F7EFE2',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FDFBF7;
+      color: #0B132B;
+    }
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 35px -12px rgba(11, 19, 43, 0.14);
+    }
+    .tab-active {
+      background-color: #0B132B !important;
+      color: #FDFBF7 !important;
+      border-color: #0B132B !important;
+      box-shadow: 0 8px 20px -4px rgba(11, 19, 43, 0.25);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- ========================================================================= -->
+  <!-- 1. EASY LINK CONFIGURATION (EDIT YOUR LINKS HERE ANYTIME)                 -->
+  <!-- ========================================================================= -->
+  <script>
+    const PORTFOLIO_CONFIG = {
+      // Personal Info
+      name: "Ahmad Ibrahem",
+      role: "Photographer • Videographer • Video Editor • Graphic Designer",
+      location: "Tartous, Syria",
+      email: "ahmad7ibrahem@gmail.com",
+      phoneDisplay: "0936574342",
+      whatsappNumber: "963936574342",
+
+      // Portrait Image (Replace with your own photo URL or file path if desired)
+      profilePhotoUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+      useInitialsAvatarIfNoPhoto: true,
+
+      // Primary Instagram Showcase Link (Used across all buttons since no Google Drive link is needed right now)
+      instagramUrl: "https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==",
+
+      // Category Links (All point directly to your Instagram portfolio; you can replace any with a Drive link later)
+      photographyShowcaseUrl: "https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==",
+      videoShowcaseUrl: "https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==",
+      designShowcaseUrl: "https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==",
+
+      // Individual Project Links (Clicking any project card opens your Instagram showcase directly)
+      projectLinks: {
+        portraitPhoto: "https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==",
+        videoReels: "https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==",
+        videoPromo: "https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==",
+        designSocial: "https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==",
+        designNewsletter: "https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ=="
+      }
+    };
+  </script>
+
+  <!-- ========================================================================= -->
+  <!-- COMPACT TOP BAR & HERO (FOCUSED 100% ON CV MEDIA LINKS)                   -->
+  <!-- ========================================================================= -->
+  <div>
+    <header class="bg-cream-50/95 backdrop-blur-md border-b border-cream-200 sticky top-0 z-40">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="#" onclick="filterMedia('all'); return false;" class="flex items-center gap-3 group">
+          <div class="w-9 h-9 rounded-lg bg-navy-900 text-cream-50 flex items-center justify-center font-serif font-bold text-base shadow-sm group-hover:bg-gold-500 transition-colors">
+            AI
+          </div>
+          <div>
+            <span class="font-bold text-navy-900 tracking-tight text-sm sm:text-base block leading-none">Ahmad Ibrahem</span>
+            <span class="text-[11px] text-gold-600 font-medium tracking-wider uppercase">Visual Media Portfolio</span>
+          </div>
+        </a>
+
+        <!-- Quick Contact & Instagram Actions -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a id="nav-instagram" href="https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white hover:opacity-95 text-xs font-semibold transition-all shadow-sm">
+            <i class="fa-brands fa-instagram text-sm"></i>
+            <span>@ahmad_momentsthatstay</span>
+          </a>
+          <a id="nav-whatsapp" href="#" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-navy-900 hover:bg-navy-800 text-cream-50 text-xs font-semibold transition-all shadow-sm">
+            <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+            <span class="hidden sm:inline">Contact via</span> WhatsApp
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========================================================================= -->
+    <!-- MAIN PORTFOLIO WORKSPACE                                                  -->
+    <!-- ========================================================================= -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
+
+      <!-- Executive Media Header Card -->
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-cream-200 shadow-sm mb-8">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div class="flex items-center gap-4 sm:gap-5">
+            <!-- Avatar -->
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-navy-900 text-cream-50 flex items-center justify-center shrink-0 border-2 border-gold-500/40 shadow-md overflow-hidden">
+              <div id="avatar-initials" class="text-center">
+                <span class="font-serif text-xl sm:text-2xl font-bold text-gold-500 block leading-none">AI</span>
+              </div>
+              <img id="avatar-img" src="" alt="Ahmad Ibrahem" class="w-full h-full object-cover hidden" />
+            </div>
+
+            <div>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-gold-100 text-gold-600 font-semibold text-[11px] uppercase tracking-wider mb-1.5">
+                <i class="fa-solid fa-circle-check"></i> Official CV Media Showcase
+              </div>
+              <h1 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900">Ahmad Ibrahem</h1>
+              <p class="text-xs sm:text-sm text-navy-700/80 mt-0.5">
+                Graphic Designer (1 Yr) • Photographer & Videographer (1 Yr) • Video Editor (1 Yr)
+              </p>
+            </div>
+          </div>
+
+          <!-- Context Credibility Badges (From CV) -->
+          <div class="flex flex-wrap gap-2 w-full md:w-auto border-t md:border-t-0 pt-4 md:pt-0 border-cream-200">
+            <div class="px-3 py-2 rounded-xl bg-cream-100 border border-cream-200 text-xs">
+              <span class="text-navy-700/60 block text-[10px] uppercase font-semibold">Leadership Role</span>
+              <span class="font-bold text-navy-900">Media Team Leader — JCI "CyberVive"</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-cream-100 border border-cream-200 text-xs">
+              <span class="text-navy-700/60 block text-[10px] uppercase font-semibold">National Publication</span>
+              <span class="font-bold text-navy-900">JCI Syria Newsletter Team</span>
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-cream-100 border border-cream-200 text-xs">
+              <span class="text-navy-700/60 block text-[10px] uppercase font-semibold">Core Software</span>
+              <span class="font-bold text-navy-900">Photoshop • CapCut</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================================================================== -->
+      <!-- CATEGORY FILTER TABS (MATCHING THE 3 CV PORTFOLIO LINKS)              -->
+      <!-- ===================================================================== -->
+      <div class="mb-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+          <div>
+            <h2 class="text-sm font-bold uppercase tracking-wider text-navy-700/70">
+              Select a Portfolio Category from the CV:
+            </h2>
+          </div>
+          <div class="text-xs text-navy-700/70">
+            Showing <span id="active-category-label" class="font-bold text-navy-900">All Visual Work (5 Showcases)</span>
+          </div>
+        </div>
+
+        <!-- 4 Filter Buttons -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
+          <button onclick="filterMedia('all')" id="tab-all"
+                  class="media-tab tab-active flex items-center justify-between px-4 py-3.5 rounded-2xl text-xs sm:text-sm font-semibold border border-cream-300 bg-white text-navy-800 hover:border-navy-900 transition-all text-left">
+            <span class="flex items-center gap-2.5">
+              <i class="fa-solid fa-layer-group text-gold-500"></i>
+              <span>All CV Work</span>
+            </span>
+            <span class="px-2 py-0.5 rounded-full text-[11px] bg-cream-200/70 text-navy-900 font-bold">5</span>
+          </button>
+
+          <button onclick="filterMedia('design')" id="tab-design"
+                  class="media-tab flex items-center justify-between px-4 py-3.5 rounded-2xl text-xs sm:text-sm font-semibold border border-cream-300 bg-white text-navy-800 hover:border-navy-900 transition-all text-left">
+            <span class="flex items-center gap-2.5">
+              <i class="fa-solid fa-pen-nib text-gold-500"></i>
+              <span>Graphic Design</span>
+            </span>
+            <span class="px-2 py-0.5 rounded-full text-[11px] bg-cream-200/70 text-navy-900 font-bold">2</span>
+          </button>
+
+          <button onclick="filterMedia('photography')" id="tab-photography"
+                  class="media-tab flex items-center justify-between px-4 py-3.5 rounded-2xl text-xs sm:text-sm font-semibold border border-cream-300 bg-white text-navy-800 hover:border-navy-900 transition-all text-left">
+            <span class="flex items-center gap-2.5">
+              <i class="fa-solid fa-camera text-gold-500"></i>
+              <span>Photography</span>
+            </span>
+            <span class="px-2 py-0.5 rounded-full text-[11px] bg-cream-200/70 text-navy-900 font-bold">1</span>
+          </button>
+
+          <button onclick="filterMedia('video')" id="tab-video"
+                  class="media-tab flex items-center justify-between px-4 py-3.5 rounded-2xl text-xs sm:text-sm font-semibold border border-cream-300 bg-white text-navy-800 hover:border-navy-900 transition-all text-left">
+            <span class="flex items-center gap-2.5">
+              <i class="fa-solid fa-clapperboard text-gold-500"></i>
+              <span>Video & Editing</span>
+            </span>
+            <span class="px-2 py-0.5 rounded-full text-[11px] bg-cream-200/70 text-navy-900 font-bold">2</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ===================================================================== -->
+      <!-- DIRECT INSTAGRAM SHOWCASE ACCESS BAR                                  -->
+      <!-- ===================================================================== -->
+      <div class="mb-8 bg-navy-900 text-cream-50 rounded-2xl p-4 sm:p-5 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 shadow-md">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center shrink-0">
+            <i class="fa-brands fa-instagram text-xl"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm sm:text-base text-white">View Live Visual Feed on Instagram</h3>
+            <p class="text-xs text-cream-200/80">Explore my latest photography, reels, and visual work directly on <span class="text-gold-500 font-semibold">@ahmad_momentsthatstay</span>:</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2.5 w-full lg:w-auto">
+          <a id="btn-folder-design" href="https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==" target="_blank" rel="noopener"
+             class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-gold-500 text-white text-xs font-semibold transition-all border border-white/10">
+            <i class="fa-solid fa-pen-nib text-gold-500"></i> Graphic Design
+          </a>
+          <a id="btn-folder-photo" href="https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==" target="_blank" rel="noopener"
+             class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-gold-500 text-white text-xs font-semibold transition-all border border-white/10">
+            <i class="fa-solid fa-camera text-gold-500"></i> Photography
+          </a>
+          <a id="btn-folder-video" href="https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==" target="_blank" rel="noopener"
+             class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-gold-500 text-white text-xs font-semibold transition-all border border-white/10">
+            <i class="fa-solid fa-video text-gold-500"></i> Video & Reels
+          </a>
+        </div>
+      </div>
+
+      <!-- ===================================================================== -->
+      <!-- PORTFOLIO GALLERY GRID (5 FOCUSED ITEMS)                              -->
+      <!-- ===================================================================== -->
+      <div id="media-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. GRAPHIC DESIGN: Social Media & Event Posters -->
+        <article data-category="design" class="media-card bg-white rounded-2xl overflow-hidden border border-cream-200 card-hover flex flex-col justify-between">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-navy-900 group">
+              <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80"
+                   alt="Social Media Campaigns & Event Posters"
+                   onerror="this.src='https://placehold.co/800x500/0B132B/FDFBF7?text=Graphic+Design+Posters'"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-navy-900/85 backdrop-blur-md text-cream-50 text-xs font-medium">
+                <i class="fa-solid fa-pen-nib text-gold-500 mr-1"></i> Graphic Design
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg text-navy-900 mb-2">Social Media Campaigns & Event Posters</h3>
+              <p class="text-sm text-navy-700/80 leading-relaxed mb-4">
+                Visual identity, social media carousels, and official event announcements crafted as Media Team Leader for <strong>CyberVive</strong> and JCI Tartus initiatives.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">Photoshop</span>
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">Social Media Grids</span>
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">Typography</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-cream-100">
+            <a data-link-key="designSocial" href="https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==" target="_blank" rel="noopener"
+               class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-navy-900 hover:bg-gold-500 text-white text-xs font-semibold transition-colors">
+              <span>View on Instagram</span>
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. GRAPHIC DESIGN: Newsletter & Publication Design -->
+        <article data-category="design" class="media-card bg-white rounded-2xl overflow-hidden border border-cream-200 card-hover flex flex-col justify-between">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-navy-900 group">
+              <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=800&q=80"
+                   alt="Newsletter & Publication Layouts"
+                   onerror="this.src='https://placehold.co/800x500/0B132B/FDFBF7?text=Newsletter+Layouts'"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-navy-900/85 backdrop-blur-md text-cream-50 text-xs font-medium">
+                <i class="fa-solid fa-newspaper text-gold-500 mr-1"></i> Editorial Design
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg text-navy-900 mb-2">Newsletter & Publication Layouts</h3>
+              <p class="text-sm text-navy-700/80 leading-relaxed mb-4">
+                Editorial layout formatting, visual storytelling, and bilingual AR/EN content translation created as a member of the <strong>JCI Syria National Newsletter Team</strong>.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">Editorial Layout</span>
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">Content Translation</span>
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">Publication Design</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-cream-100">
+            <a data-link-key="designNewsletter" href="https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==" target="_blank" rel="noopener"
+               class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-navy-900 hover:bg-gold-500 text-white text-xs font-semibold transition-colors">
+              <span>View on Instagram</span>
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. PHOTOGRAPHY: Portrait Photography & Lighting -->
+        <article data-category="photography" class="media-card bg-white rounded-2xl overflow-hidden border border-cream-200 card-hover flex flex-col justify-between">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-navy-900 group">
+              <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80"
+                   alt="Portrait Photography & Lighting"
+                   onerror="this.src='https://placehold.co/800x500/0B132B/FDFBF7?text=Portrait+Photography'"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-navy-900/85 backdrop-blur-md text-cream-50 text-xs font-medium">
+                <i class="fa-solid fa-camera text-gold-500 mr-1"></i> Photography
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg text-navy-900 mb-2">Portrait Photography & Lighting</h3>
+              <p class="text-sm text-navy-700/80 leading-relaxed mb-4">
+                Executive portraits, natural and studio lighting setups, and color-graded photography tailored for professional profiles and media campaigns.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">Portraiture</span>
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">Color Grading</span>
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">Photoshop</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-cream-100">
+            <a data-link-key="portraitPhoto" href="https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==" target="_blank" rel="noopener"
+               class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-navy-900 hover:bg-gold-500 text-white text-xs font-semibold transition-colors">
+              <span>View Photos on Instagram</span>
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. VIDEO: Event Highlights & Aftermovies -->
+        <article data-category="video" class="media-card bg-white rounded-2xl overflow-hidden border border-cream-200 card-hover flex flex-col justify-between">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-navy-900 group">
+              <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80"
+                   alt="Event Highlights & Aftermovies"
+                   onerror="this.src='https://placehold.co/800x500/0B132B/FDFBF7?text=Event+Reels+%26+Video'"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute inset-0 flex items-center justify-center bg-navy-900/30 group-hover:bg-navy-900/10 transition-colors">
+                <div class="w-12 h-12 rounded-full bg-gold-500 text-white flex items-center justify-center shadow-lg">
+                  <i class="fa-solid fa-play ml-0.5"></i>
+                </div>
+              </div>
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-navy-900/85 backdrop-blur-md text-cream-50 text-xs font-medium">
+                <i class="fa-solid fa-video text-gold-500 mr-1"></i> Videography & Editing
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg text-navy-900 mb-2">Event Highlights & Aftermovies</h3>
+              <p class="text-sm text-navy-700/80 leading-relaxed mb-4">
+                Full video production, dynamic camera movement, and rhythmic montage editing for conferences, JCI forums, and community initiatives.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">Videography</span>
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">CapCut</span>
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">Sound Sync</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-cream-100">
+            <a data-link-key="videoReels" href="https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==" target="_blank" rel="noopener"
+               class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-navy-900 hover:bg-gold-500 text-white text-xs font-semibold transition-colors">
+              <span>Watch Reels on Instagram</span>
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 5. VIDEO: Promotional Reels & Short-Form Edits -->
+        <article data-category="video" class="media-card bg-white rounded-2xl overflow-hidden border border-cream-200 card-hover flex flex-col justify-between">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-navy-900 group">
+              <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=800&q=80"
+                   alt="Promotional Reels & Social Edits"
+                   onerror="this.src='https://placehold.co/800x500/0B132B/FDFBF7?text=Promo+Video+Editing'"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute inset-0 flex items-center justify-center bg-navy-900/30 group-hover:bg-navy-900/10 transition-colors">
+                <div class="w-12 h-12 rounded-full bg-gold-500 text-white flex items-center justify-center shadow-lg">
+                  <i class="fa-solid fa-play ml-0.5"></i>
+                </div>
+              </div>
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-navy-900/85 backdrop-blur-md text-cream-50 text-xs font-medium">
+                <i class="fa-solid fa-film text-gold-500 mr-1"></i> Video Editing
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg text-navy-900 mb-2">Promotional Reels & Social Edits</h3>
+              <p class="text-sm text-navy-700/80 leading-relaxed mb-4">
+                High-retention vertical reels (Instagram/Facebook), bilingual AR/EN subtitles, pacing cuts, and visual transitions for campaigns like <em>CyberVive</em>.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">CapCut</span>
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">Subtitling (AR/EN)</span>
+                <span class="px-2.5 py-1 rounded-md bg-cream-100 text-navy-800 text-xs font-medium">Color Grading</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-cream-100">
+            <a data-link-key="videoPromo" href="https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==" target="_blank" rel="noopener"
+               class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-navy-900 hover:bg-gold-500 text-white text-xs font-semibold transition-colors">
+              <span>Watch Promo Reels</span>
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MINIMAL FOOTER WITH DIRECT CONTACT                                        -->
+  <!-- ========================================================================= -->
+  <footer class="bg-white border-t border-cream-200 py-6">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-navy-700/80">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-navy-900">Ahmad Ibrahem</span>
+        <span>•</span>
+        <span>Tartous, Syria</span>
+        <span>•</span>
+        <a href="mailto:ahmad7ibrahem@gmail.com" class="hover:text-gold-600 underline">ahmad7ibrahem@gmail.com</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a id="footer-instagram" href="https://www.instagram.com/ahmad_momentsthatstay?cplk=MTAydmpwM2M0Y2NsMQ==" target="_blank" rel="noopener" class="hover:text-navy-900 font-medium inline-flex items-center gap-1.5">
+          <i class="fa-brands fa-instagram text-pink-600"></i> @ahmad_momentsthatstay
+        </a>
+        <a id="footer-whatsapp" href="#" target="_blank" rel="noopener" class="hover:text-navy-900 font-medium inline-flex items-center gap-1">
+          <i class="fa-brands fa-whatsapp text-emerald-600"></i> 0936574342
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- INTERACTIVE FILTERING & DEEP-LINK SCRIPT                                  -->
+  <!-- ========================================================================= -->
+  <script>
+    const categoryNames = {
+      all: "All Visual Work (5 Showcases)",
+      design: "Graphic Design Portfolio (2 Showcases)",
+      photography: "Photography Portfolio (1 Showcase)",
+      video: "Videography & Video Editing Portfolio (2 Showcases)"
+    };
+
+    function filterMedia(category) {
+      const tabs = document.querySelectorAll('.media-tab');
+      const cards = document.querySelectorAll('.media-card');
+      const label = document.getElementById('active-category-label');
+
+      tabs.forEach(tab => tab.classList.remove('tab-active'));
+      const activeTab = document.getElementById('tab-' + category) || document.getElementById('tab-all');
+      if (activeTab) activeTab.classList.add('tab-active');
+
+      if (label && categoryNames[category]) {
+        label.textContent = categoryNames[category];
+      }
+
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Update URL hash cleanly so you can copy specific category links for your CV
+      if (history.replaceState) {
+        history.replaceState(null, null, category === 'all' ? window.location.pathname : '#' + category);
+      }
+    }
+
+    function applyPortfolioConfig() {
+      const waLink = `https://wa.me/${PORTFOLIO_CONFIG.whatsappNumber}?text=${encodeURIComponent("Hello Ahmad, I viewed your Creative Media Portfolio from your CV.")}`;
+
+      const bindHref = (id, url) => {
+        const el = document.getElementById(id);
+        if (el && url) el.href = url;
+      };
+
+      bindHref('nav-whatsapp', waLink);
+      bindHref('footer-whatsapp', waLink);
+      bindHref('nav-instagram', PORTFOLIO_CONFIG.instagramUrl);
+      bindHref('footer-instagram', PORTFOLIO_CONFIG.instagramUrl);
+
+      bindHref('btn-folder-photo', PORTFOLIO_CONFIG.photographyShowcaseUrl);
+      bindHref('btn-folder-video', PORTFOLIO_CONFIG.videoShowcaseUrl);
+      bindHref('btn-folder-design', PORTFOLIO_CONFIG.designShowcaseUrl);
+
+      // Avatar handling
+      const avatarImg = document.getElementById('avatar-img');
+      const avatarInitials = document.getElementById('avatar-initials');
+      if (!PORTFOLIO_CONFIG.useInitialsAvatarIfNoPhoto && PORTFOLIO_CONFIG.profilePhotoUrl) {
+        avatarImg.src = PORTFOLIO_CONFIG.profilePhotoUrl;
+        avatarImg.classList.remove('hidden');
+        avatarInitials.classList.add('hidden');
+      }
+
+      // Bind individual project links
+      document.querySelectorAll('[data-link-key]').forEach(btn => {
+        const key = btn.getAttribute('data-link-key');
+        if (PORTFOLIO_CONFIG.projectLinks && PORTFOLIO_CONFIG.projectLinks[key]) {
+          btn.href = PORTFOLIO_CONFIG.projectLinks[key];
+        }
+      });
+
+      // Check URL hash on load (supports #design, #photography, #video directly from CV)
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      if (['design', 'photography', 'video'].includes(hash)) {
+        filterMedia(hash);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', applyPortfolioConfig);
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      if (['all', 'design', 'photography', 'video'].includes(hash)) {
+        filterMedia(hash);
+      }
+    });
+  </script>
+</body>
+</html>
