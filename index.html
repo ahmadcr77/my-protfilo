@@ -4,22 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ✏️ EDIT: This is the text shown on the browser tab -->
   <title>Ahmad Ibrahem — Portfolio</title>
-
-  <!-- ✏️ EDIT: Short description of you (shows up in Google search results) -->
-  <meta name="description" content="Portfolio of [Ahmad Ibrahem] — designer & creative." />
+  <meta name="description" content="Portfolio of Ahmad Ibrahem — designer & creative." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- تأكد أن ملف style.css موجود داخل مجلد اسمه css على GitHub -->
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       ✏️ EDIT: NAVIGATION (the menu at the top)
-       Change "Your Name" below to your name.
-       ============================================================ -->
+  <!-- NAVIGATION -->
   <header class="site-header">
     <nav class="nav container">
       <a href="#" class="nav__logo">Ahmad Ibrahem</a>
@@ -37,34 +33,26 @@
 
   <main>
 
-    <!-- ============================================================
-         ✏️ EDIT: HERO (the big first screen)
-         ============================================================ -->
+    <!-- HERO -->
     <section class="hero container">
-      <!-- Your job title / tagline -->
       <p class="hero__eyebrow">Designer & Creative</p>
 
-      <!-- ✏️ EDIT: Your headline — the accent class colors a word green -->
       <h1 class="hero__title">
         Hi, I'm <span class="accent">Ahmad Ibrahem</span>.<br />
         I design clean, thoughtful visual experiences.
       </h1>
 
-      <!-- ✏️ EDIT: 1–2 sentences about you -->
       <p class="hero__subtitle">
-      	IT engineer, graphic designer, video editor and translator
+        IT engineer, graphic designer, video editor and translator
       </p>
 
-      <!-- ✏️ EDIT: Button labels and where they link to -->
       <div class="hero__actions">
         <a href="#work" class="btn btn--primary">View my work</a>
         <a href="#contact" class="btn btn--ghost">Get in touch</a>
       </div>
     </section>
 
-    <!-- ============================================================
-         ✏️ EDIT: ABOUT
-         ============================================================ -->
+    <!-- ABOUT -->
     <section id="about" class="about container section">
       <div class="section__head">
         <p class="section__label">About</p>
@@ -73,21 +61,17 @@
 
       <div class="about__grid">
 
-        <!-- ✏️ EDIT: YOUR PHOTO
-             1. Put a photo in the images folder (e.g. images/profile.jpg)
-             2. Replace the whole <div class="about__photo-placeholder">…</div>
-               with:  <img src="images/profile.jpg" alt="Your Name" />
-        -->
+        <!-- تم إغلاق هذا الوسم بشكل صحيح هنا -->
         <div class="about__photo">
-          <img src="images/ahmad.jpg" alt="ahmad" />
+          <img src="./images/ahmad.jpg" alt="Ahmad Ibrahem" />
+        </div>
 
-        <!-- ✏️ EDIT: Your story — 2 or 3 short paragraphs -->
         <div class="about__text">
           <p>
-           IT Engineer graduated from Lattakia University, An accountant, JCI Tartus member from 2026.
+            IT Engineer graduated from Lattakia University, an accountant, and JCI Tartus member since 2026.
           </p>
           <p>
-            creative, hard worker and love learning new thing. photographer and video editor. 
+            Creative, hard worker, and love learning new things. Photographer and video editor.
           </p>
           <a href="#contact" class="btn btn--primary">Let's work together</a>
         </div>
@@ -95,11 +79,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         ✏️ EDIT: SKILLS
-         Each <li class="skill-card"> is one skill box.
-         To add more, copy a whole <li>…</li> block and paste it.
-         ============================================================ -->
+    <!-- SKILLS -->
     <section id="skills" class="skills section">
       <div class="container">
         <div class="section__head">
@@ -110,32 +90,27 @@
         <ul class="skills__list">
           <li class="skill-card">
             <h3>Photoshop</h3>
-            <p>photo editing and graphic design</p>
+            <p>Photo editing and graphic design</p>
           </li>
           <li class="skill-card">
             <h3>Video editing</h3>
-            <p>CapCut, Edits and Premiere pro</p>
+            <p>CapCut, Edits and Premiere Pro</p>
           </li>
           <li class="skill-card">
             <h3>Tools</h3>
-            <p>Photoshop · CapCut · AI tools · Edits · premiere pro</p>
+            <p>Photoshop · CapCut · AI tools · Edits · Premiere Pro</p>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- ============================================================
-         ✏️ EDIT: WORK / PROJECT GALLERY
-         ============================================================ -->
+    <!-- WORK / PROJECT GALLERY -->
     <section id="work" class="work container section">
       <div class="section__head">
         <p class="section__label">Work</p>
         <h2 class="section__title">Selected projects</h2>
       </div>
 
-      <!-- ✏️ EDIT: The filter buttons above the gallery.
-           data-filter must match the data-category on your cards.
-           "all" shows everything. Remove buttons you don't need. -->
       <div class="work__filters" role="tablist">
         <button class="filter is-active" data-filter="all">All</button>
         <button class="filter" data-filter="graphic design">Graphic Design</button>
@@ -143,100 +118,88 @@
         <button class="filter" data-filter="Video editing">Video editing</button>
       </div>
 
-      <!-- ✏️ EDIT: PROJECT CARDS
-           To ADD a project: copy one whole <article>…</article> block,
-           paste it below, then edit:
-             - data-category  → must match a filter button above
-             - the <img>      → your project image (see comment inside)
-             - <h3>           → project title
-             - <p>            → category and year
-        -->
       <div class="work__grid">
 
-        <!-- ✏️ EDIT: PROJECT 1 -->
+        <!-- PROJECT 1 -->
         <article class="work-card" data-category="graphic design" tabindex="0">
           <div class="work-card__img">
-            <!-- To use a real image, replace the <div> below with:
-                 <img src="images/project-1.jpg" alt="Project title" /> -->
-            <img src="images/best creative2.jpg" alt="Halloween Costume Certificate design" />
+            <img src="./images/best%20creative2.jpg" alt="Halloween Costume Certificate design" />
           </div>
           <div class="work-card__meta">
             <h3>Halloween Costume Certificate design</h3>
-            <p>Graphic Design 2026</p>
+            <p>Graphic Design · 2026</p>
           </div>
         </article>
 
-        <!-- ✏️ EDIT: PROJECT 2 -->
+        <!-- PROJECT 2 -->
         <article class="work-card" data-category="graphic design" tabindex="0">
           <div class="work-card__img">
-            <img src="images/brochure.jpg" alt="Halloween Costume Certificate design" />
+            <img src="./images/brochure.jpg" alt="JCI Tartus 10 Years Of Leadership Project brochure" />
           </div>
           <div class="work-card__meta">
             <h3>JCI Tartus 10 Years Of Leadership Project brochure</h3>
             <p>Graphic Design · 2026</p>
           </div>
         </article>
- <!-- ✏️ EDIT: PROJECT 2 -->
+
+        <!-- PROJECT 3 -->
         <article class="work-card" data-category="graphic design" tabindex="0">
           <div class="work-card__img">
-            <img src="images/invitation card.jpg" alt="Halloween Costume Certificate design" />
+            <img src="./images/invitation%20card.jpg" alt="JCI Tartus 10 Years Of Leadership Project invitation card" />
           </div>
           <div class="work-card__meta">
             <h3>JCI Tartus 10 Years Of Leadership Project invitation card</h3>
             <p>Graphic Design · 2026</p>
           </div>
         </article>
-<!-- ✏️ EDIT: PROJECT 2 -->
+
+        <!-- PROJECT 4 -->
         <article class="work-card" data-category="graphic design" tabindex="0">
           <div class="work-card__img">
-            <img src="images/brochure A.jpg" alt="Halloween Costume Certificate design" />
+            <img src="./images/brochure%20A.jpg" alt="JCI Tartus ArchLead Project brochure" />
           </div>
           <div class="work-card__meta">
             <h3>JCI Tartus ArchLead Project brochure</h3>
             <p>Graphic Design · 2026</p>
           </div>
         </article>
-        <!-- ✏️ EDIT: PROJECT 2 -->
+
+        <!-- PROJECT 5 -->
         <article class="work-card" data-category="graphic design" tabindex="0">
           <div class="work-card__img">
-            <img src="images/Appropriation.jpg" alt="Halloween Costume Certificate design" />
+            <img src="./images/Appropriation.jpg" alt="JCI Tartus MedScope Project Appropriation Certificate" />
           </div>
           <div class="work-card__meta">
             <h3>JCI Tartus MedScope Project Appropriation Certificate</h3>
             <p>Graphic Design · 2026</p>
           </div>
         </article>
+
       </div>
     </section>
 
-    <!-- ============================================================
-         ✏️ EDIT: CONTACT
-         ============================================================ -->
+    <!-- CONTACT -->
     <section id="contact" class="contact container section">
       <div class="section__head">
         <p class="section__label">Contact</p>
-        
+        <h2 class="section__title">Get in touch</h2>
       </div>
 
       <p class="contact__text">
         Have a project in mind or just want to chat? My Email inbox is always open.
       </p>
 
-      <!-- ✏️ EDIT: your email — appears in the text AND the link -->
-      <a href="mailto:ahmad7ibrahem@gmail.com" class="btn btn--primary btn--lg">ahmad ibrahem</a>
+      <a href="mailto:ahmad7ibrahem@gmail.com" class="btn btn--primary btn--lg">Ahmad Ibrahem</a>
 
-      <!-- ✏️ EDIT: social links — replace "#" with your profile URLs,
-           or delete <li> items you don't use -->
       <ul class="contact__socials">
-        <li><a href="https://wa.me/qr/JF24MBBRG6C3K1" rel="noopener">Whatsapp</a></li>
-        <li><a href="https://www.facebook.com/share/19gctum2re/" rel="noopener">Facebook</a></li>
-        <li><a href="https://www.instagram.com/a7mad_a_ib?psln=MWR3NTZhZXd0YW12bA==" rel="noopener">Instagram</a></li>
+        <li><a href="https://wa.me/qr/JF24MBBRG6C3K1" target="_blank" rel="noopener">Whatsapp</a></li>
+        <li><a href="https://www.facebook.com/share/19gctum2re/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/a7mad_a_ib?psln=MWR3NTZhZXd0YW12bA==" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
     </section>
 
   </main>
 
-  <!-- ⚠️ Don't edit the lightbox or footer below unless you know what you're doing -->
   <div class="lightbox" hidden>
     <button class="lightbox__close" aria-label="Close">&times;</button>
     <img src="" alt="" />
@@ -244,10 +207,9 @@
   </div>
 
   <footer class="site-footer">
-    <!-- ✏️ EDIT: footer copyright line -->
     <p>© 2026 Ahmad Ibrahem</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 </html>
